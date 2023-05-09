@@ -65,6 +65,12 @@ const dLightShadowHelper = new THREE.CameraHelper(directionalLight.shadow.camera
 
 cube.material.map = textureLoader.load(space)
 
+const testG = new THREE.SphereGeometry(5);
+const testM = new THREE.MeshBasicMaterial({color: "gray"})
+const testCube = new THREE.Mesh(testG, testM)
+testCube.position.set(5,5,10)
+
+scene.add(testCube)
 scene.add(box, plane, gridHelper, sphere, cube, ambientLight, directionalLight, dLightHelper, dLightShadowHelper, spotLight)
 spotLight.position.set(-100, 100, 30);
 spotLight.castShadow = true;
